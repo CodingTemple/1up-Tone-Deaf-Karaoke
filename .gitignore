@@ -1,0 +1,14 @@
+venv/
+output_folder/*
+pretrained_models/
+my_recordings/*
+my_recordings_temp/*
+mp3/*
+
+x-venv/
+!my_recordings/.gitkeep
+!output_folder/.gitkeep
+!my_recordings_temp/.gitkeep
+!mp3/.gitkeep
+
+

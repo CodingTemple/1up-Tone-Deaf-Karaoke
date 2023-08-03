@@ -1,0 +1,14 @@
+add this code into your venv/lib/python3.xx/site-packes/pydub/playback.py
+
+with the x being your python version like 10 for 3.10
+
+add it below teh function definition for _play_with_ffplay
+
+
+import os
+def _play_with_ffplay_suppress(seg):
+    with NamedTemporaryFile("w+b", suffix=".wav", delete=False) as f:
+        PLAYER = get_player_name()
+        seg.export(f.name, "wav")
+        devnull = open(os.devnull, 'w')
+        subprocess.call([PLAYER,"-nodisp", "-autoexit", "-hide_banner", f.name],stdout=devnull, stderr=devnull)
