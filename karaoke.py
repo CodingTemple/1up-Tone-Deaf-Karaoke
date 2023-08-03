@@ -17,8 +17,8 @@ def play_microphone(recording_buffer=[]):
     buffer = deque(maxlen=10)
 
     def callback(indata, outdata, frames, time, status):
-        if status:
-            print(status)
+        # if status:  # This is here for debugging purposes only
+        #     print(status)
 
         buffer.append(indata.copy())
         recording_buffer.extend(indata.copy())
